@@ -2,18 +2,20 @@ from flask import Flask
 from flask import request 
 from flask import Response 
 from flask import jsonify
+
 import os 
 import datetime
 
 
-#create flask app
+
 app = Flask(__name__)
-time_stamp = datetime.date.today()
+time_stamp = datetime.datetime.now() #later change this so it only stamps day
+ 
 
 
 #might turn this into a class
 DIRECTORY_NAME = "log"
-FILE_NAME = "analytics.json"
+FILE_NAME = "analytics.json " + str(time_stamp) # adding time stamp 
 FILE_PATH = '' 
 
 
@@ -53,10 +55,6 @@ def Log():
 		return "<h1>waiting for data...</h1>"
 
 		
-
-@app.route('/data')
-def Data():
-	return "data"
 
 	
 
