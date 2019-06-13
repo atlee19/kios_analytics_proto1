@@ -1,6 +1,6 @@
 # Use an official Python runtime as a parent image
 
-FROM python:2.7-slim
+FROM python:3.6-slim
 
 # Set the working directory to /app
 WORKDIR /app
@@ -18,4 +18,4 @@ EXPOSE 8000
 ENV NAME World
 
 # Run app.py when the container launches
-CMD ["python", "logger.py"]
+CMD ["python3", "logger.py"]
