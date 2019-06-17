@@ -1,9 +1,6 @@
-import socket 
 import json
 import requests 
 
-host = "0.0.0.0"
-port = 8000
 
 #test data 
 DATA = { 'fruit' : 'apple', 
