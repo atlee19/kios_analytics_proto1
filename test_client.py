@@ -1,18 +1,27 @@
 import socket 
+import json
+import requests 
 
 host = "0.0.0.0"
 port = 8000
 
-#creating socket object
-client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#test data 
+DATA = { 'fruit' : 'apple', 
+		 'color' : 'red'
+	   }
 
-#connect the client 
-client.connect((host, port))
+#posts = 0
+#THRESHOLD = 100
 
-#send some data 
-client.send(b"GET / HTTP/1.1\r\nHost: hello\r\n\r\n")
-#what is the post??
+#while posts < THRESHOLD:
 
-response = client.recv(4096)
+#sends json test data 
+r = requests.post(url = "http://0.0.0.0:8000/", json = DATA)
 
-print("REPLY:".format(response))
+
+
+
+
+
+
+
